@@ -26,7 +26,7 @@ export default function (args, appBuild, config, paths) {
     publicPath = '/',
     library = null,
     libraryTarget = 'var',
-    devtool = debug ? defaultDevtool : false,
+    devtool = defaultDevtool,
   } = config;
 
   const babelOptions = getBabelOptions(config);
