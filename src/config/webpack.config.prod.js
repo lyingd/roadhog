@@ -26,7 +26,7 @@ export default function (args, appBuild, config, paths) {
     publicPath = '/',
     library = null,
     libraryTarget = 'var',
-    devtool = defaultDevtool,
+    devtool = debug ? defaultDevtool : false,
   } = config;
 
   const babelOptions = getBabelOptions(config);
@@ -88,6 +88,7 @@ export default function (args, appBuild, config, paths) {
           screw_ie8: true,
           ascii_only: true,
         },
+        sourceMap: !!devtool
       })]),
       ...(analyze ? [new Visualizer()] : []),
     ],
