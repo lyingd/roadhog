@@ -88,7 +88,7 @@ export default function (args, appBuild, config, paths) {
           screw_ie8: true,
           ascii_only: true,
         },
-        sourceMap: !!devtool
+        sourceMap: !!devtool,
       })]),
       ...(analyze ? [new Visualizer()] : []),
     ],
